@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Main from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Trelloみたいなやつ</h1>
+      {/* <div id="incantation">
+        <input type="text" />
+        <div className="btn">呪文を唱える</div>
+      </div>
+      <div id="input_parking">
+        <input type="text" />
+        <div className="btn">追加</div>
+      </div>
+      <div id="input_today">
+        <input type="text" />
+        <div className="btn">追加</div>
+      </div>
+      <div id="input_done">
+        <input type="text" />
+        <div className="btn">追加</div>
+      </div> */}
+      <Main />
     </div>
   );
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import dummyData from "../dummyData";
 import Card from "./Card";
 
 export const Main = () => {
   const [data, setData] = useState(dummyData);
+  const todoNameRef = useRef();
   const onDragEnd = (result) => {
     const { source, destination } = result;
 
@@ -45,15 +46,22 @@ export const Main = () => {
     }
   }
 
+  const handleAddTodo = () => {
+    console.log("🚀 ~ file: Main.jsx:64 ~ Main ~ todoNameRef.current.value:", todoNameRef.current.value)
+  }
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div class="trello">
         {data.map((section) => (
           <>
+            {/* {console.log("🚀 ~ file: Main.jsx:56 ~ Main ~ section:", section)} */}
             <Droppable key={section.id} droppableId={section.id}>
               {(provided) => (
                 <div className="trello-section" ref={provided.innerRef} {...provided.droppableProps}>
                   <div className="trello-section-title">{section.title}</div>
+                  <input type="text" id={section.title} ref={todoNameRef} />
+                  <button onClick={handleAddTodo}>タスクを追加</button>
                   <div class="trello-section-content">
                     {section.tasks.map((task, index) => (
                       <Draggable draggableId={task.id} index={index} key={task.id}>

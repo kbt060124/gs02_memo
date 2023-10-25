@@ -45,10 +45,10 @@ let dummyData = [
   },
 ];
 
-// dummyData[0]["tasks"][dummyData[0]["tasks"].length] = { id: uuidv4(), title: "筋トレ" };
+dummyData[0]["tasks"][dummyData[0]["tasks"].length] = { id: uuidv4(), title: "筋トレ" };
 
-// let dummyDataJson = JSON.stringify(dummyData);
+let dummyDataJson = JSON.stringify(dummyData);
 
-// localStorage.setItem("jsonObject", dummyDataJson);
+localStorage.setItem("jsonObject", dummyDataJson);
 
 export default dummyData;

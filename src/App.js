@@ -8,8 +8,8 @@ function App() {
       {/* <div id="incantation">
         <input type="text" />
         <div className="btn">呪文を唱える</div>
-      </div>
-      <div id="input_parking">
+      </div> */}
+      {/* <div id="input_parking">
         <input type="text" />
         <div className="btn">追加</div>
       </div>
